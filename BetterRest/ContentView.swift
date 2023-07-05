@@ -27,30 +27,31 @@ struct ContentView: View {
     var body: some View {
         NavigationView  {
             Form {
-                Text("When do you want to wake up?")
-                    .font(.headline)
-                
-                DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                Section("When do you want to wake up?") {
+                    DatePicker("Please enter a time",
+                               selection: $wakeUp,
+                               displayedComponents: .hourAndMinute)
                     .labelsHidden()
-                
-                VStack(alignment: .leading,
-                       spacing: 0) {
-                    Text("Desired amout of sleep")
-                        .font(.headline)
-                    
-                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
                 
-                Text("Daily coffee intake")
-                    .font(.headline)
+                Section("Desired amout of sleep") {
+                    Stepper("\(sleepAmount.formatted()) hours",
+                            value: $sleepAmount,
+                            in: 4...12,
+                            step: 0.25)
+                }
                 
-                Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                Section("Daily coffee intake") {                    
+                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
+                            value: $coffeeAmount,
+                            in: 1...20)
+                }
                 
-                    .alert(alertTitle, isPresented: $showingAlert) {
-                        Button("OK") {}
-                    }   message: {
-                        Text(alertMessage)
-                    }
+                .alert(alertTitle, isPresented: $showingAlert) {
+                    Button("OK") {}
+                }   message: {
+                    Text(alertMessage)
+                }
             }
             .navigationTitle("BetterRest")
             .toolbar {
