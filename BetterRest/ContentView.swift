@@ -41,10 +41,13 @@ struct ContentView: View {
                             step: 0.25)
                 }
                 
-                Section("Daily coffee intake") {                    
-                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups",
-                            value: $coffeeAmount,
-                            in: 1...20)
+                Section("Daily coffee intake") {
+                    Picker("Please select:",
+                           selection: $coffeeAmount) {
+                        ForEach(1..<21) {
+                            Text($0 == 1 ? "1 cup" : "\($0) cups")
+                        }
+                    }
                 }
                 
                 .alert(alertTitle, isPresented: $showingAlert) {
