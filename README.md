@@ -10,6 +10,7 @@ That’s where machine learning comes in: using a technique called regression an
 
 Here is a quick look at the app:
 
-![2023-07-04 16-07-30 2023-07-04 16_08_32](https://github.com/akashsheelavant/BetterSleep/assets/52631413/c43c4bd7-0491-4bc1-9799-eb41fdbc5faa)
+![2023-07-05 13-46-49 2023-07-05 13_47_58](https://github.com/akashsheelavant/BetterSleep/assets/52631413/db3fe7f5-e6c6-413d-99f5-b38eb1856da0)
+
 
 
